@@ -9,11 +9,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class TakenTest {
 
-	private static final int UP = 1;
-	private static final int DOWN = 4;
-	private static final int RIGHT = 3;
-	private static final int LEFT = 2;
-
 	@Test
 	public void createTake3X3() {
 		StringBuffer outputBuffer = new StringBuffer();
@@ -43,7 +38,7 @@ public class TakenTest {
 		             append("08|09|10|11|\n").
 				     append("12|13|14|15|\n");
 		Taken take = new Taken(4);
-		Taken takeDown = take.moveSpace(DOWN);
+		Taken takeDown = take.moveSpace(Move.DOWN.getValue());
 		assertThat(takeDown.toString(), is(outputBuffer.toString()));
 	}
 
@@ -55,7 +50,7 @@ public class TakenTest {
 		             append("08|09|10|11|\n").
 				     append("12|13|14|15|\n");
 		Taken take = new Taken(4);
-		Taken takeUp = take.moveSpace(UP);
+		Taken takeUp = take.moveSpace(Move.UP.getValue());
 		assertThat(takeUp.toString(), is(outputBuffer.toString()));
 	}
 
@@ -67,8 +62,8 @@ public class TakenTest {
 		             append("08|09|10|11|\n").
 				     append("12|13|14|15|\n");
 		Taken take = new Taken(4);
-		Taken takeDown = take.moveSpace(DOWN);
-		Taken takeUp = takeDown.moveSpace(UP);
+		Taken takeDown = take.moveSpace(Move.DOWN.getValue());
+		Taken takeUp = takeDown.moveSpace(Move.UP.getValue());
 		assertThat(takeUp.toString(), is(outputBuffer.toString()));
 	}
 
@@ -80,7 +75,7 @@ public class TakenTest {
 		            .append("08|09|10|11|\n")
 				    .append("12|13|14|15|\n");
 		Taken take = new Taken(4);
-		Taken takeDown = take.moveSpace(RIGHT);
+		Taken takeDown = take.moveSpace(Move.RIGHT.getValue());
 		assertThat(takeDown.toString(), is(outputBuffer.toString()));
 	}
 
@@ -92,7 +87,7 @@ public class TakenTest {
 		            .append("08|09|10|11|\n")
 				    .append("12|13|14|15|\n");
 		Taken take = new Taken(4);
-		Taken takeLeft = take.moveSpace(LEFT);
+		Taken takeLeft = take.moveSpace(Move.LEFT.getValue());
 		assertThat(takeLeft.toString(), is(outputBuffer.toString()));
 	}
 
@@ -104,8 +99,8 @@ public class TakenTest {
 		            .append("08|09|10|11|\n")
 				    .append("12|13|14|15|\n");
 		Taken take = new Taken(4);
-		Taken takeRight = take.moveSpace(RIGHT);
-		Taken takeLeft = takeRight.moveSpace(LEFT);
+		Taken takeRight = take.moveSpace(Move.RIGHT.getValue());
+		Taken takeLeft = takeRight.moveSpace(Move.LEFT.getValue());
 		assertThat(takeLeft.toString(), is(outputBuffer.toString()));
 	}
 
@@ -118,7 +113,7 @@ public class TakenTest {
 		Taken take = new Taken(3);
 		Taken takeLeft = take;
 		for (int i = 1; i < 4; i++) {
-			takeLeft = takeLeft.moveSpace(RIGHT);
+			takeLeft = takeLeft.moveSpace(Move.RIGHT.getValue());
 		}
 		assertThat(takeLeft.toString(), is(outputBuffer.toString()));
 	}

@@ -31,6 +31,7 @@ public class Taken {
 		Position positionSpace = this.positionSpace();
 		Value valueDSpace = this.map.get(positionSpace);
 		Taken copyTake = this;
+		
 		switch (option) {
 		case UP:
 			Position positionUp = new Position(positionSpace.x - 1, positionSpace.y);
