@@ -15,13 +15,13 @@ public class ControllerTake {
 		System.out.print(taken.toString());
 		System.out.println("para mover el espacio digite uno de los siguientes valores");
 		System.out.println(MenuUtils.menuOptionMovieSpace());
-		taken = TakenUtils.moveSpaceRandon(taken, 100);
+		taken = TakenUtils.moveSpaceRandon(taken, 2000);
 		do {
 			System.out.println(taken.toString());
 			int optionMove = MenuUtils.ReadOption();
 			taken = taken.moveSpace(optionMove);
 		} while (!TakenUtils.isOrganized(taken));
-		System.out.println("Feliciraciones");
+		System.out.println("Felicitaciones");
 
 	}
 

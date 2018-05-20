@@ -3,7 +3,7 @@ package com.crivera.TakenGame.model;
 import com.crivera.TakenGame.utils.TakenUtils;
 import com.google.common.base.Preconditions;
 
-public class Value {
+public final class Value {
 	private String value;
 
 	public Value(int number, int length) {

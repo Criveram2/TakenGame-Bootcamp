@@ -7,15 +7,15 @@ import java.util.Map;
 
 import com.google.common.base.Preconditions;
 
-public class Taken {
+public final class  Taken {
 
 	private static final int UP = 1;
 	private static final int DOWN = 4;
 	private static final int RIGHT = 3;
 	private static final int LEFT = 2;
 
-	private int size;
-	private Map<Position, Value> map = new LinkedHashMap<Position, Value>();
+	private final int size;
+	private final Map<Position, Value> map = new LinkedHashMap<Position, Value>();
 
 	public Taken(int n) {
 		Preconditions.checkArgument((n >= 3), "El valor de n debe ser mayor a 2");
